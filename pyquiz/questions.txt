@@ -1,0 +1,26 @@
+Please follow the style of inserting new questions
+1: Question
+2: Choice 1
+3: Choice 2
+4: Choice 3
+5: Choice 4 
+6: Answer
+7: <new line> 
+
+QUESTION STARTS HERE:
+
+How to print hello world in python?
+1. printf("hello world");
+2. print("hello world")
+3. console.log("hello world");
+4. prints(hello world)
+2
+
+What will this python code prints? print("1" + "2")
+1. "12"
+2. 12
+3. "3"
+4. 3
+1
+
+
