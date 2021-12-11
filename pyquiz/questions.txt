@@ -1,4 +1,4 @@
-Please follow the style of inserting new questions
+Please follow this format in order to insert new questions
 1: Question
 2: Choice 1
 3: Choice 2
@@ -22,5 +22,3 @@ What will this python code prints? print("1" + "2")
 3. "3"
 4. 3
 1
-
-
