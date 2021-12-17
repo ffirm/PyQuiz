@@ -1,7 +1,7 @@
 from tkinter import *
 
 root = Tk()
-root.title("PyQuiz")
+root.title("PyQuiz by Thanat")
 root.geometry("400x300")
 
 
@@ -41,7 +41,7 @@ def edit():
     file_menu.add_command(label="Exit", command=top.destroy)
 
     # status bar
-    status = Label(top, text="blooped     ", anchor=E)
+    status = Label(top, text="questions.txt     ", anchor=E)
     status.pack(fill=X, side=BOTTOM, ipady=5)
 
     # opening questions.txt
@@ -83,14 +83,20 @@ class Quiz:
         self.main_frame = Frame(master)
         self.main_frame.pack()
 
-        self.title = Label(self.main_frame, text="Welcome to PyQuiz")
-        self.title.grid(row=0, column=0)
+        self.title = Label(self.main_frame, text="Welcome to PyQuiz", font=30, pady=10)
+        self.title.grid(row=0, column=1)
+
+        intro_text = "PyQuiz is an interactive quiz game.\n" \
+                     "Press 'Edit' to edit the questions.\n" \
+                     "Press 'Start' to begin the quiz."
+        self.intro = Label(self.main_frame, text=intro_text, pady=10)
+        self.intro.grid(row=1, column=1)
 
         self.start_quiz = Button(self.main_frame, text="Start", command=self.start)
         self.edit_quiz = Button(self.main_frame, text="Edit quiz", command=edit)
 
-        self.start_quiz.grid(row=1, column=0)
-        self.edit_quiz.grid(row=1, column=1)
+        self.start_quiz.grid(row=2, column=0)
+        self.edit_quiz.grid(row=2, column=3)
 
     def start(self):
         question = process_questions()
@@ -169,9 +175,9 @@ class Quiz:
             result_frame.pack_forget()
             self.main_frame.pack()
 
-        def try_again():
-            result_frame.pack_forget()
-            new_frame.pack()
+        # def try_again():
+        #     result_frame.pack_forget()
+        #     new_frame.pack()
 
         result_frame = Frame(root)
         result_frame.pack()
@@ -179,10 +185,10 @@ class Quiz:
         result_label = Label(result_frame, text=f"You scored {current_score} out of {len(question)}!")
         result_label.grid(row=0, column=0)
 
-        try_again_btn = Button(result_frame, text="Try again", command=try_again)
-        try_again_btn.grid(row=1, column=0)
+        # try_again_btn = Button(result_frame, text="Try again", command=try_again)
+        # try_again_btn.grid(row=1, column=0)
         main_menu_btn = Button(result_frame, text="Return to main menu", command=return_to_menu)
-        main_menu_btn.grid(row=1, column=1)
+        main_menu_btn.grid(row=1, column=0)
 
 
 q1 = Quiz(root)
